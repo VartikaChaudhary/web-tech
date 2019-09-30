@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+	
+		<title>Simple Calculator</title>
+		
+		<style>
+		
+			body{
+				background-color:#F1948A;
+				margin-top:60px;
+			}
+		
+			h1{
+				color:#17A589;
+				margin-left:300px;
+				font-size:45px;
+				font-family:"Courier New", Courier, monospace;
+				font-style:italic;
+			}
+			
+			.t{
+				border:4px dotted #D6EAF8;
+				margin-left:360px;
+				margin-top:60px;
+				text-align:center;
+				border-spacing: 10px;
+				font-size:25px;
+			}
+			
+			.format{
+				background-color:#F1948A;
+				color:black;
+				width:100%;
+				height:100%;
+			}
+			
+			input[type='text']
+			{
+				background-color:#F1948A;
+				color:black;
+				width:100%;
+				height:100%;
+				font-size:30px;
+			}
+		
+		</style>
+		
+		<script>
+		
+			function square()
+			{
+				var x;
+				x = parseInt(document.getElementById('display').value*document.getElementById('display').value);
+				document.getElementById('display').value  = x;
+			}
+			
+			function clear()
+			{
+				var y;
+				y = parseInt(slice(0,document.getElementById('display').value.length-1));
+				document.getElementById('display').value = y;
+			}
+		
+		</script>
+		
+	</head>
+	
+	<body>
+	
+		<h1>SIMPLE CALCULATOR</h1>
+		
+		<form name='calculator'>
+		<table class='t' border height='465px' width='365px'>
+			
+			<tr>
+				<td colspan='4'><input type='text' name='display' id='display'/></td>
+			</tr>
+			
+			<tr>
+				<td> <input type='reset' value='CE' class='format'/></td>
+				<td><input type='button' class='format' value='C' onclick='clear()'/></td>
+				<td><input type='button' value='*' onclick="calculator.display.value += '*'" class='format'/></td>
+				<td><input type='button' value='/' onclick="calculator.display.value += '/'" class='format'/></td>
+			</tr>
+			
+			<tr>
+				<td><input type='button' value='7' onclick="calculator.display.value += '7'" class='format'/></td>
+				<td><input type='button' value='8' onclick="calculator.display.value += '8'" class='format'/></td>
+				<td><input type='button' value='9' onclick="calculator.display.value += '9'" class='format'/></td>
+				<td><input type='button' value='Sq' onclick="square()" class='format'/></td>
+			</tr>
+			
+			<tr>
+				<td><input type='button' value='4' onclick="calculator.display.value += '4'" class='format'/></td>
+				<td><input type='button' value='5' onclick="calculator.display.value += '5'" class='format'/></td>
+				<td><input type='button' value='6' onclick="calculator.display.value += '6'" class='format'/></td>
+				<td><input type='button' value='-' onclick="calculator.display.value += '-'" class='format'/></td>
+			</tr>
+			
+			<tr>
+				<td><input type='button' value='1' onclick="calculator.display.value += '1'" class='format'/></td>
+				<td><input type='button' value='2' onclick="calculator.display.value += '2'" class='format'/></td>
+				<td><input type='button' value='3' onclick="calculator.display.value += '3'" class='format'/></td>
+				<td rowspan='2'><input type='button' value='=' class='format' onclick="calculator.display.value = eval(calculator.display.value)"/></td>
+			</tr>
+			
+			<tr>
+				<td><input type='button' value='0' onclick="calculator.display.value += '0'" class='format'/></td>
+				<td><input type='button' value='.' onclick="calculator.display.value += '.'" class='format'/></td>
+				<td><input type='button' value='+' onclick="calculator.display.value += '+'" class='format'/></td>
+			</tr>
+			
+		</table>
+		</form>
+		
+	</body>
+	
+</html>
